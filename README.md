@@ -1,6 +1,6 @@
 # My Resume
 
-This repository contains my resume, written in LaTeX.
+This process dynamically generates my resume by fetching real-time project data from my GitHub profile.
 
 ## Prerequisites
 
@@ -10,15 +10,18 @@ Ensure you have the following installed:
 
 ## How to Build
 
-1. Fill your `.env` according to `.env.example`.
+1. Fill your `.env` file according to `.env.example`.
+
 2. Make the build script executable:
 
   ```bash
-  chmod +x build-resume.sh
+  chmod +x ./scripts/build-resume.sh
   ```
 
 3. Run the script to generate the resume:
 
   ```bash
-  ./build-resume.sh
+  ./scripts/build-resume.sh
   ```
+
+4. The resume will be generated in the `out` directory.
