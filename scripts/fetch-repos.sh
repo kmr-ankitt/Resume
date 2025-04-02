@@ -12,9 +12,7 @@ mkdir -p out
 rm -rf out/repo-topics.json
 
 function fetch-pinned-repos(){
-  echo -e "\e[34m"
-  echo "Fetching pinned repositories..."
-  echo -e "\e[0m"
+  echo -e "\e[34mFetching pinned repositories...\e[0m"
 
   curl -L -X POST 'https://api.github.com/graphql' \
   -H "Authorization: bearer $GITHUB_TOKEN" \
@@ -37,7 +35,12 @@ function extract_pinned_repos(){
 }
 
 function merge_json(){
-  jq -s 'map(.[]) | group_by(.name) | map(reduce .[] as $item ({}; . + $item))' out/extracted-pinned-repos.json out/repo-topics.json > out/repos.json
+  jq -s 'map(.[]) | reduce .[] as $item ([]; 
+    if any(.name == $item.name) 
+    then map(if .name == $item.name then . + $item else . end) 
+    else . + [$item] 
+    end
+  )' out/extracted-pinned-repos.json out/repo-topics.json > out/repos.json
 }
 
 function response(){
@@ -61,9 +64,9 @@ function response(){
 response
 
 if [ $? -eq 0 ]; then
-  echo -e "\e[32m\nFetch successfully\e[0m"
+  echo -e "\e[32mFetch successfully\e[0m"
   echo -e "\e[32m\nOutput:\e[0m"
-  cat out/repos.json
+
   rm -rf out/pinned-repos.json
   rm -rf out/repo-topics.json
   rm -rf out/extracted-pinned-repos.json
