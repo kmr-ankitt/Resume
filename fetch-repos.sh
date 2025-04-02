@@ -37,7 +37,7 @@ function extract_pinned_repos(){
 }
 
 function merge_json(){
-  jq -s 'map(.[]) | group_by(.name) | map(reduce .[] as $item ({}; . + $item))' out/extracted-pinned-repos.json out/repo-topics.json > out/merged-repos.json
+  jq -s 'map(.[]) | group_by(.name) | map(reduce .[] as $item ({}; . + $item))' out/extracted-pinned-repos.json out/repo-topics.json > out/repos.json
 }
 
 function response(){
@@ -58,13 +58,15 @@ function response(){
   merge_json
 }
 
-
 response
 
 if [ $? -eq 0 ]; then
   echo -e "\e[32m\nFetch successfully\e[0m"
   echo -e "\e[32m\nOutput:\e[0m"
-  bat out/extracted-pinned-repos.json
+  cat out/repos.json
+  rm -rf out/pinned-repos.json
+  rm -rf out/repo-topics.json
+  rm -rf out/extracted-pinned-repos.json
 else
   echo -e "\e[31m\nFailed to fetch data\e[0m"
   exit 1

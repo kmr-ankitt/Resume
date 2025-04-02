@@ -1,6 +1,7 @@
 #! /bin/bash
 
-NAME=`echo "src/resume.tex" | cut -d'.' -f1`
+NAME=`echo "resume.tex" | cut -d'.' -f1`
+cd src
 OUT_DIR="./out"
 
 mkdir -p $OUT_DIR
