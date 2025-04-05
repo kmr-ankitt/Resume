@@ -1,3 +1,4 @@
-out/
+out/*
 .env
 src/build-resume.log
+!out/resume.pdf
