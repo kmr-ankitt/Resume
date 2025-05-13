@@ -5,6 +5,7 @@ NAME="resume"
 echo -e "\e[34mMaking scripts executable...\e[0m"
 chmod +x ./scripts/fetch-repos.sh
 chmod +x ./scripts/create-projects-section.sh
+chmod +x ./scripts/publish-resume.sh
 
 echo -e "\e[32mRunning fetch-repos.sh...\e[0m"
 bash ./scripts/fetch-repos.sh
@@ -39,5 +40,13 @@ echo -e "\e[32mCompilation successful. Opening PDF...\e[0m"
 xdg-open $OUT_DIR/$NAME.pdf
 if [ $? -ne 0 ]; then
   echo -e "\e[31mError: Failed to open PDF file\e[0m" >&2
+  exit 1
+fi
+
+echo -e "\e[32mPDF opened successfully.\e[0m"
+cd -
+bash ./scripts/publish-resume.sh
+if [ $? -ne 0 ]; then
+  echo -e "\e[31mError: Failed to publish resume\e[0m" >&2
   exit 1
 fi
