@@ -23,7 +23,7 @@ jq -c '.[]' "$REPO_JSON" | while read -r project; do
     TECH=$(echo "$TECH" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
     
     # Append project details to LaTeX file
-    echo "\\resumeProjectHeading{\\textbf{$NAME} \$|$ \emph{$TECH}}{\\href{$URL}{GitHub}}" >> "$OUTPUT_FILE"
+    echo "\\resumeProjectHeading{\\textbf{$NAME} \$|$ \emph{$TECH}}{\\href{$URL}{github}}" >> "$OUTPUT_FILE"
     echo "\\resumeItemListStart" >> "$OUTPUT_FILE"
     echo "\\resumeItem{$DESC}" >> "$OUTPUT_FILE"
     echo "\\resumeItemListEnd" >> "$OUTPUT_FILE"
