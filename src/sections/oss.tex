@@ -1,0 +1,24 @@
+\section{Open Source Contributions}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading{\textbf{Turso Database} $($\emph{rust}$)$}{\href{https://github.com/tursodatabase/turso/pull/1677}{PR \#1677}}
+
+\resumeItemListStart
+
+\resumeItem{Fixed unsound usage of \texttt{unsafe \{ str::from\_utf8\_unchecked(word) \}} in \texttt{keyword\_token}.}
+
+\resumeItem{Replaced with safe \texttt{std::str::from\_utf8(word).ok()?} to prevent undefined behavior.}
+
+\resumeItemListEnd
+
+\resumeProjectHeading{\textbf{Chromium DevTools} $($\emph{typescript, css}$)$}{\href{https://chromium-review.googlesource.com/c/devtools/devtools-frontend/+/7109459}{CL \#7109459}}
+
+\resumeItemListStart
+
+\resumeItem{\textbf{fix(devtools):} Corrected console output selection text color for readability.}
+
+\resumeItem{Resolved issue where selected text (e.g., \texttt{"undefined"}) became unreadable on dark blue background.}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
