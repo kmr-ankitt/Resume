@@ -1,29 +1,11 @@
 #! /bin/bash
 
-NAME="resume"
+NAME="webresume"
 
 echo -e "\e[34mMaking scripts executable...\e[0m"
-chmod +x ./scripts/fetch-repos.sh
-chmod +x ./scripts/create-projects-section.sh
 chmod +x ./scripts/publish-resume.sh
 
-echo -e "\e[32mRunning fetch-repos.sh...\e[0m"
-bash ./scripts/fetch-repos.sh
-if [ $? -ne 0 ]; then
-  echo -e "\e[31mError: fetch-repos.sh failed\e[0m" >&2
-  exit 1
-fi
-
-echo -e "\e[32mRunning create-projects-section.sh...\e[0m"
-bash ./scripts/create-projects-section.sh
-if [ $? -ne 0 ]; then
-  echo -e "\e[31mError: create-projects-section.sh failed\e[0m" >&2
-  exit 1
-fi
-
-echo -e "\e[32mScripts executed successfully.\e[0m"
-
-cd src
+cd src/
 OUT_DIR="../out"
 
 echo -e "\e[34mCreating output directory...\e[0m"
@@ -44,6 +26,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo -e "\e[32mPDF opened successfully.\e[0m"
+
 cd -
 bash ./scripts/publish-resume.sh
 if [ $? -ne 0 ]; then
