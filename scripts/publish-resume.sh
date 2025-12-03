@@ -1,5 +1,5 @@
 #!/bin/bash
-outdir="$HOME/Dev/kmrankit/public"
+outdir="$HOME/Dev/kmr-ankitt/public"
 
 read -p "Do you want to push this to github(y/n): " answer
 
@@ -10,7 +10,7 @@ fi
 
 cp ./out/webresume.pdf "$outdir"
 echo -e "\e[32mResume placed.\e[0m"
-cd ~/Dev/kmrankit/public
+cd ~/Dev/kmr-ankitt/public
 
 echo -e "\e[33mPushing to GitHub...\e[0m"
 echo -e "\e[33mPushing to GitHub...\e[0m"
