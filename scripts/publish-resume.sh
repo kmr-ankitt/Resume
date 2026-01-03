@@ -16,6 +16,6 @@ echo -e "\e[33mPushing to GitHub...\e[0m"
 echo -e "\e[33mPushing to GitHub...\e[0m"
 git add -- webresume.pdf
 git commit -m "fix: update web resume"
-git push origin nofetch/web
+git push origin main
 
 echo -e "\e[32mResume published successfully.\e[0m"
