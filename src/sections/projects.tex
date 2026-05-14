@@ -1,25 +1,33 @@
 \section{Projects}
 \resumeSubHeadingListStart
-\resumeProjectHeading{\textbf{Szare: Local File Sharing App} $($\emph{Gin, Next.js}$)$}{\href{https://github.com/kmr-ankitt/szare}{Github}}
-\resumeItemListStart
 
-\resumeItem{Engineered Go-based concurrent transfer engine supporting \textbf{50+ parallel file streams with zero-copy I/O}, achieving \textbf{100+ MB/s throughput} on LAN.}
-\resumeItem{Designed \textbf{self-hosted architecture eliminating third-party dependencies}, reducing external attack surface by \textbf{100\%}.}
-\resumeItem{Built responsive UI enabling \textbf{1--10 GB file uploads per session} with resumable transfer support.}
+\resumeProjectHeading{\textbf{Weezy: Workflow Orchestration System} $($\emph{TypeScript, GraphQL, BullMQ, Redis, PostgreSQL}$)$}{\href{https://github.com/kmr-ankitt/weezy}{Github}}
+\resumeItemListStart
+\resumeItem{Architected a \textbf{DAG-based distributed workflow engine} with deterministic execution using BullMQ + Redis, supporting \textbf{horizontal scalability} across concurrent workers.}
+\resumeItem{Built \textbf{GraphQL API} over PostgreSQL via Prisma for real-time workflow monitoring and distributed user activity tracking.}
+\resumeItem{Designed modular node architecture with clean separation between orchestration and execution layers, enabling extensible third-party integrations.}
 \resumeItemListEnd
 
-\resumeProjectHeading{\textbf{Titly: URL Shortener} $($\emph{Gin, SvelteKit, Redis, Docker}$)$}{\href{https://github.com/kmr-ankitt/titly}{Github}}
-\resumeItemListStart
-\resumeItem{Implemented \textbf{Redis LRU cache reducing database hits by \textbf{70\%}}, enabling sub-\textbf{5 ms} short-code resolution latency.}
-\resumeItem{Containerized services using Docker, cutting setup time from \textbf{30 min to under 3 min} per deployment.}
-\resumeItemListEnd
+% \resumeProjectHeading{\textbf{Titly: URL Shortener} $($\emph{Gin, SvelteKit, Redis, Docker}$)$}{\href{https://github.com/kmr-ankitt/titly}{Github}}
+% \resumeItemListStart
+% \resumeItem{Benchmarked \textbf{18,000+ req/sec} under 100 concurrent connections (ApacheBench) and \textbf{88,000+ req/sec} sustained throughput over 30s (wrk), with \textbf{sub-6 ms} p95 latency.}
+% \resumeItem{Implemented \textbf{Redis LRU cache} reducing DB hits by \textbf{70\%}; leveraged Go goroutines for high-concurrency request handling with zero failed requests under load.}
+% \resumeItemListEnd
 
-\resumeProjectHeading{\textbf{DevIDE: Online Code Editor} $($\emph{Next.js, Convex}$)$}{\href{https://github.com/kmr-ankitt/devide}{Github}}
-\resumeItemListStart
-\resumeItem{Built customizable multi-theme UI and integrated \textbf{Stripe payment flow}, processing \textbf{100+ test transactions}.}
-\resumeItem{Implemented indexed search and Redis caching, improving project retrieval performance by \textbf{60\%}.}
-\resumeItem{Designed user profile system storing \textbf{10k+ code execution logs} with complete history tracking.}
-\resumeItemListEnd
+
+% \resumeProjectHeading{\textbf{Szare: Local File Sharing App} $($\emph{Gin, Next.js}$)$}{\href{https://github.com/kmr-ankitt/szare}{Github}}
+% \resumeItemListStart
+% \resumeItem{Engineered Go-based concurrent transfer engine supporting \textbf{50+ parallel file streams with zero-copy I/O}, achieving \textbf{100+ MB/s throughput} on LAN.}
+% \resumeItem{Designed \textbf{self-hosted architecture eliminating third-party dependencies}, reducing external attack surface by \textbf{100\%}.}
+% \resumeItem{Built responsive UI enabling \textbf{1--10 GB file uploads per session} with resumable transfer support.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading{\textbf{DevIDE: Online Code Editor} $($\emph{Next.js, Convex}$)$}{\href{https://github.com/kmr-ankitt/devide}{Github}}
+% \resumeItemListStart
+% \resumeItem{Built customizable multi-theme UI and integrated \textbf{Stripe payment flow}, processing \textbf{100+ test transactions}.}
+% \resumeItem{Implemented indexed search and Redis caching, improving project retrieval performance by \textbf{60\%}.}
+% \resumeItem{Designed user profile system storing \textbf{10k+ code execution logs} with complete history tracking.}
+% \resumeItemListEnd
 
 % \resumeProjectHeading{\textbf{Kenv: Secure Env Manager} $($\emph{FastAPI, Next.js, Docker, SQLite}$)$}{\href{https://github.com/kmr-ankitt/kenv}{Github}}
 % \resumeItemListStart
@@ -28,5 +36,11 @@
 % \resumeItem{Designed role-based access and audit logging system tracking \textbf{10k+ secret access events} without plaintext exposure.}
 % \resumeItem{Containerized full stack using Docker, reducing onboarding time from \textbf{20 minutes to under 2 minutes}.}
 % \resumeItemListEnd
+
+\resumeProjectHeading{\textbf{Ratelimiter} $($\emph{Rust, Actix-web}$)$}{\href{https://github.com/kmr-ankitt/ratelimiter}{Github}}
+\resumeItemListStart
+\resumeItem{Built a \textbf{trait-based, pluggable rate limiting service} in Rust (Actix-web) implementing 5 algorithms — Token Bucket, Leaky Bucket, Fixed Window, Sliding Window Log, and Sliding Window Counter — behind a unified \texttt{RateLimiter} trait.}
+\resumeItem{Benchmarked \textbf{100k requests} across all algorithms with simulated burst traffic; achieved \textbf{sub-130ms} total runtime with \texttt{Mutex}-guarded shared state for thread-safe concurrent access.}
+\resumeItemListEnd
 
 \resumeSubHeadingListEnd
