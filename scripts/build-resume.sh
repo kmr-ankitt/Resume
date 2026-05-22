@@ -1,6 +1,6 @@
 #! /bin/bash
 
-NAME="webresume"
+NAME="resume"
 
 echo -e "\e[34mMaking scripts executable...\e[0m"
 chmod +x ./scripts/publish-resume.sh

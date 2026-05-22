@@ -8,14 +8,14 @@ if [[ $answer != "y" ]]; then
     exit 0
 fi
 
-cp ./out/webresume.pdf "$outdir"
+cp ./out/resume.pdf "$outdir"
 echo -e "\e[32mResume placed.\e[0m"
 cd ~/Dev/kmr-ankitt/public
 
 echo -e "\e[33mPushing to GitHub...\e[0m"
 echo -e "\e[33mPushing to GitHub...\e[0m"
-git add -- webresume.pdf
-git commit -m "fix: update web resume"
+git add -- resume.pdf
+git commit -m "fix: update clean resume"
 git push origin main
 
 echo -e "\e[32mResume published successfully.\e[0m"
