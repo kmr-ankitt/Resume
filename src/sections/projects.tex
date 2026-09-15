@@ -1,18 +1,20 @@
 \section{Projects}
 \resumeSubHeadingListStart
 
-\resumeProjectHeading{\textbf{Weezy: Workflow Orchestration System} $($\emph{TypeScript, GraphQL, BullMQ, Redis, PostgreSQL}$)$}{\href{https://github.com/kmr-ankitt/weezy}{Github}}
-\resumeItemListStart
-\resumeItem{Architected a \textbf{DAG-based distributed workflow engine} with deterministic execution using BullMQ + Redis, supporting \textbf{horizontal scalability} across concurrent workers.}
-\resumeItem{Built \textbf{GraphQL API} over PostgreSQL via Prisma for real-time workflow monitoring and distributed user activity tracking.}
-\resumeItem{Designed modular node architecture with clean separation between orchestration and execution layers, enabling extensible third-party integrations.}
-\resumeItemListEnd
 
 % \resumeProjectHeading{\textbf{Titly: URL Shortener} $($\emph{Gin, SvelteKit, Redis, Docker}$)$}{\href{https://github.com/kmr-ankitt/titly}{Github}}
 % \resumeItemListStart
 % \resumeItem{Benchmarked \textbf{18,000+ req/sec} under 100 concurrent connections (ApacheBench) and \textbf{88,000+ req/sec} sustained throughput over 30s (wrk), with \textbf{sub-6 ms} p95 latency.}
 % \resumeItem{Implemented \textbf{Redis LRU cache} reducing DB hits by \textbf{70\%}; leveraged Go goroutines for high-concurrency request handling with zero failed requests under load.}
 % \resumeItemListEnd
+
+\resumeProjectHeading{\textbf{Titly: URL Shortener} $($\emph{Go, Gin, Redis, SQLite, Docker}$)$}{\href{https://github.com/kmr-ankitt/titly}{Github}}
+\resumeItemListStart
+\resumeItem{Built a REST API in \textbf{Gin} for URL shortening with deduplication, designed with \textbf{distributed systems} in mind, and dockerized for deployment.}
+\resumeItem{Designed a \textbf{cache-aside architecture} with SQLite as durable store and Redis as a 24-hour TTL cache for redirect lookups.}
+\resumeItem{Decoupled short-code generation from request handling, isolating the \textbf{Base64} UUID scheme so it can be replaced with a \textbf{distributed} generator like \textbf{Snowflake} without touching storage or handler code.}
+\resumeItem{Added IP-based \textbf{rate limiting} (10 req/min).}
+\resumeItemListEnd
 
 % \resumeProjectHeading{\textbf{Kenv: Secure Env Manager} $($\emph{FastAPI, Next.js, Docker, SQLite}$)$}{\href{https://github.com/kmr-ankitt/kenv}{Github}}
 % \resumeItemListStart
@@ -21,6 +23,12 @@
 % \resumeItem{Implemented RBAC, audit logging, and Dockerized deployment, cutting setup time to \textbf{under 2 minutes}.}
 % \resumeItemListEnd
 
+\resumeProjectHeading{\textbf{Weezy: Workflow Orchestration System} $($\emph{TypeScript, GraphQL, BullMQ, Redis, PostgreSQL}$)$}{\href{https://github.com/kmr-ankitt/weezy}{Github}}
+\resumeItemListStart
+\resumeItem{Architected a \textbf{DAG-based distributed workflow engine} with deterministic execution using BullMQ + Redis, supporting \textbf{horizontal scalability} across concurrent workers.}
+\resumeItem{Built \textbf{GraphQL API} over PostgreSQL via Prisma for real-time workflow monitoring and distributed user activity tracking.}
+\resumeItem{Designed modular node architecture with clean separation between orchestration and execution layers, enabling extensible third-party integrations.}
+\resumeItemListEnd
 
 \resumeProjectHeading{\textbf{RateLimiter} $($\emph{Rust, Actix-web}$)$}{\href{https://github.com/kmr-ankitt/ratelimiter}{Github}}
 \resumeItemListStart
@@ -37,12 +45,12 @@
 % \resumeItemListEnd
 %
 
-\resumeProjectHeading{\textbf{DevIDE: Online Code Editor} $($\emph{Next.js, Convex}$)$}{\href{https://github.com/kmr-ankitt/devide}{Github}}
-\resumeItemListStart
-\resumeItem{Built customizable multi-theme UI and integrated \textbf{Stripe payment flow}, processing \textbf{100+ test transactions}.}
-\resumeItem{Implemented indexed search and Redis caching, improving project retrieval performance by \textbf{60\%}.}
-\resumeItem{Designed user profile system storing \textbf{10k+ code execution logs} with complete history tracking.}
-\resumeItemListEnd
+% \resumeProjectHeading{\textbf{DevIDE: Online Code Editor} $($\emph{Next.js, Convex}$)$}{\href{https://github.com/kmr-ankitt/devide}{Github}}
+% \resumeItemListStart
+% \resumeItem{Built customizable multi-theme UI and integrated \textbf{Stripe payment flow}, processing \textbf{100+ test transactions}.}
+% \resumeItem{Implemented indexed search and Redis caching, improving project retrieval performance by \textbf{60\%}.}
+% \resumeItem{Designed user profile system storing \textbf{10k+ code execution logs} with complete history tracking.}
+% \resumeItemListEnd
 
 % \resumeProjectHeading{\textbf{Szare: Local File Sharing App} $($\emph{Gin, Next.js}$)$}{\href{https://github.com/kmr-ankitt/szare}{Github}}
 % \resumeItemListStart
